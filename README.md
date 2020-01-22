@@ -1,3 +1,3 @@
-# Data-Structures
+# Small-Projects
 
-A few of the programs I built in my Data Structures and Algorithms Class. 
+A few of the programs I built in some of my classes.
