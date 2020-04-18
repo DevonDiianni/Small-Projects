@@ -24,7 +24,6 @@ void displayEmployee(Employee * person)
 	
 	for (int i = 0; i < SSN_SIZE ; i++)
         {
-
                 if (i == 2)
                 {
                         printf("%c-",person->ssn[i]);
@@ -37,14 +36,11 @@ void displayEmployee(Employee * person)
 		{
 			printf("%c ",person->ssn[i]);
 		}
-
                 else
 		{
                 	printf("%c",person->ssn[i]);
 		}
-                
         }
-
 	int num = person->salary / 1000;
 	int num2 = person->salary % 1000;
 	printf("\nYou entered the salary: $%d,%03d\n\n\n", num, num2);	
@@ -106,7 +102,6 @@ void listEmployees (void)
 
 	for (int i=0; i <= MAX_EMPS; i++)
 	{
-
 		if (emps[i] == NULL)
 		{
 			printf("No employee at : %d\n", i);
@@ -116,12 +111,8 @@ void listEmployees (void)
 			displayEmployee(emps[i]);
 		}
 	}
-
 	printf("Thats all the employees!\n\n");
-
-
 }
-
 
 Employee * findEmployee(char * name)
 {
@@ -139,16 +130,12 @@ Employee * findEmployee(char * name)
                 	counter++;
 		}
         }
-
-
 	printf("This employee doesn't exist\n");
 	return NULL;
-
 }
 
 void fireEmployee(char * name)
 {
-
 	printf("You entered the name: %s\n\n", name);
         int counter = 0;
         for (int i=0; i < totalEmps; i++)
@@ -166,11 +153,8 @@ void fireEmployee(char * name)
                         counter++;
                 }
         }
-
-
         printf("This employee doesn't exist\n");
         return;
-
 }
 
 int salaryComp(Employee ** a, Employee ** b) 
@@ -218,8 +202,6 @@ int nameComp(Employee **a, Employee **b)
                 return -1;
         }
         else {
-	
-
 		if (lengthA > lengthB)
 		{
 			return 1;
@@ -231,8 +213,7 @@ int nameComp(Employee **a, Employee **b)
 		else
 		{
 			return 0;
-		}
-		
+		}	
 	}	
 }
 
@@ -309,10 +290,8 @@ void main(void)
 				sort(emps, EMPS_SIZE, nameComp);
 				listEmployees();
 			}
-			
 			else if (!strcmp(sortType,salary))
 			{
-
 				printf("sorting by salary\n\n");
 				sort(emps, EMPS_SIZE, salaryComp);	
 				listEmployees();
@@ -321,10 +300,7 @@ void main(void)
 
 				printf("Improper sort type entered, exiting to main menu\n\n");
 			}
-
-
 		}
-
 		else if (!strcmp(command,quit))
 		{
 			printf("Quitting the managers dashboard!\n\n");
