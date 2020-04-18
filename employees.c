@@ -5,7 +5,6 @@
 #define SSN_SIZE 9
 #define MAX_EMPS 19 
 
-
 typedef struct {
 	int salary;
 	int yearBorn;
@@ -13,13 +12,11 @@ typedef struct {
 	char * name;
 }Employee;	
 
-
 Employee *emps[EMPS_SIZE];
 int totalEmps = 0;
 
 void displayEmployee(Employee * person)
 {
-
 	printf("\nYou entered the name: %s\nYou entered the year: %d\nYou entered the social security number: ",person->name, person->yearBorn);
 	
 	for (int i = 0; i < SSN_SIZE ; i++)
@@ -48,7 +45,6 @@ void displayEmployee(Employee * person)
 
 void readEmployee(Employee * person)
 {
-	
 	int * inputYearBorn = &person->yearBorn;
 	int * inputSalary = &person->salary;
 	char buff[256];	
@@ -70,7 +66,6 @@ void readEmployee(Employee * person)
 	scanf("%s", buff);
 	*person->ssn = '\0';
 	strncat(person->ssn, buff, 9);
-
 }
 
 void createEmployee (void)
@@ -99,7 +94,6 @@ void releaseEmployee (Employee * person)
 
 void listEmployees (void)
 {
-
 	for (int i=0; i <= MAX_EMPS; i++)
 	{
 		if (emps[i] == NULL)
@@ -116,7 +110,6 @@ void listEmployees (void)
 
 Employee * findEmployee(char * name)
 {
-
 	printf("You entered the name: %s\n\n", name);
 	int counter = 0;
 	for (int i=0; i < totalEmps; i++)
@@ -185,7 +178,6 @@ int salaryComp(Employee ** a, Employee ** b)
 
 int nameComp(Employee **a, Employee **b)
 {
-
 	Employee *empA = *a;
 	Employee *empB = *b;
 
@@ -277,8 +269,7 @@ void main(void)
 
 		}
 		else if (!strcmp(command,_sort))
-		{
-		
+		{		
 			printf("Would you like to sort by SALARY or NAME?\n\n");
 			scanf("%s", sortBuff);
 			sortType = malloc(strlen(sortBuff+1));
