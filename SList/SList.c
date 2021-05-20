@@ -39,6 +39,29 @@ int   slistGetSize(const SList * list)  // return the size of list (number of el
 }
 
 //Big-O Notation: O(n)
+void    slistPrint(const SList * list)  // print the contents of the list
+{
+    // print the list
+    
+    // print the start of the list
+    printf("[");
+    // the head node
+    Node * curr = list->head;
+    // as long as the current is not nulls
+    while( curr )
+    {
+        // print this using the formatter
+        printf("%s",(char*)curr->value);
+        // if this is not the tail, add a space
+        if( curr->next != NULL )
+            printf(", ");
+        // move to the next node
+        curr = curr->next;
+    }
+    // print the closing bracket
+    printf("]\n");
+}
+/*
 void    slistPrint(const SList * list, char* (*formatter)(void *))  // print the contents of the list
 {
     // print the list
@@ -60,7 +83,7 @@ void    slistPrint(const SList * list, char* (*formatter)(void *))  // print the
     }
     // print the closing bracket
     printf("]\n");
-}
+}*/
 
 //Big-O Notation: O(1)
 bool    slistInsertFirst(SList * list, const void * value, size_t valueSize) // insert a Node with the specified info at the front of list
@@ -71,6 +94,9 @@ bool    slistInsertFirst(SList * list, const void * value, size_t valueSize) // 
     newNode->next = list->head;
     // set the head to this node
     list->head = newNode;
+    if(list->count == 0){
+        list->tail = newNode;
+    }
     // increment the count by 1
     list->count++;
     // return true
@@ -243,6 +269,20 @@ bool    slistRemoveNth(SList * list, int n)  // remove (delete) the Nth element 
 //Big-O Notation: O(1)
 bool slistInsertLast(SList * list, const void * value, size_t valueSize) // insert element into the last position
 {
+    /*
+ // get a new node
+    Node * newNode = createNode(value, valueSize);
+    // set the next of this node to the head of the list
+    newNode->next = list->head;
+    // set the head to this node
+    list->head = newNode;
+    // increment the count by 1
+    list->count++;
+    // return true
+    return true;
+*/
+
+
     // create a new node
     Node * newNode = createNode(value, valueSize);
     // if the list is empty
@@ -255,6 +295,7 @@ bool slistInsertLast(SList * list, const void * value, size_t valueSize) // inse
     else
     {
         // set the new node to the next of the tail
+        //newNode->next = NULL;
         list->tail->next = newNode;
         // set the tail to the new node
         list->tail = newNode;

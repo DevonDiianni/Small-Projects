@@ -194,7 +194,8 @@ int nameComp(Employee **a, Employee **b)
                 return -1;
         }
         else {
-		if (lengthA > lengthB)
+			return 0;
+	/*	if (lengthA > lengthB)
 		{
 			return 1;
 		}
@@ -205,7 +206,7 @@ int nameComp(Employee **a, Employee **b)
 		else
 		{
 			return 0;
-		}	
+		}	*/
 	}	
 }
 
@@ -225,7 +226,7 @@ void main(void)
 	char sortBuff[256];
 	
 	char hire[] = "HIRE";
-        char list[] = "LIST";
+    char list[] = "LIST";
 	char quit[] = "QUIT";	
 	char find[] = "FIND";
 	char fire[] = "FIRE";

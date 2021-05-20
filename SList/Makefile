@@ -7,7 +7,7 @@ CXX = gcc
 SRC = Node.c SList.c main.c
 
 mySLinkedList: ${SRC} 
-	${CXX} ${SRC} -o slinkedlist
+	${CXX} ${SRC} -g -o slinkedlist
 
 run:
 	./slinkedlist

@@ -17,7 +17,9 @@ typedef void (*SList_forfn)(void *);
  
 SList * slistCreate();  // Creates an empty list
 int     slistGetSize(const SList * list);  // return the size of list (number of elements in the list)
-void    slistPrint(const SList * list, char* (*formatter)(void *));  // print the contents of the list
+//void    slistPrint(const SList * list, char* (*formatter)(void *));  // print the contents of the list
+void    slistPrint(const SList * list);  // print the contents of the list
+
 
 bool    slistInsertFirst(SList * list, const void * value, size_t valueSize); // insert a Node with the specified info at the front of list
 void *  slistGetFirst(const SList * list);  // get the value part of the first element
